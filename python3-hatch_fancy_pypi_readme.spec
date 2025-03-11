@@ -5,7 +5,7 @@
 Summary:	Fancy PyPI READMEs with Hatch
 Name:		python3-%{module}
 Version:	24.1.0
-Release:	2
+Release:	3
 License:	MIT
 Group:		Libraries/Python
 Source0:	https://pypi.debian.net/hatch_fancy_pypi_readme/%{module}-%{version}.tar.gz
