@@ -1,14 +1,15 @@
 # Conditional build:
 %bcond_with	tests	# unit tests
 
-%define		module	 hatch_fancy_pypi_readme
+%define		module	 hatch-fancy-pypi-readme
 Summary:	Fancy PyPI READMEs with Hatch
 Name:		python3-%{module}
 Version:	24.1.0
-Release:	3
+Release:	4
 License:	MIT
 Group:		Libraries/Python
-Source0:	https://pypi.debian.net/hatch_fancy_pypi_readme/%{module}-%{version}.tar.gz
+#Source0Download: https://pypi.org/simple/hatch-fancy-pypi-readme
+Source0:	https://files.pythonhosted.org/packages/source/h/hatch-fancy-pypi-readme/hatch_fancy_pypi_readme-%{version}.tar.gz
 # Source0-md5:	f5f9e639f066c91f8e623ec6231beae9
 URL:		https://pypi.org/project/hatch-fancy-pypi-readme/
 BuildRequires:	python3-build
@@ -20,6 +21,7 @@ BuildRequires:	python3-modules >= 1:3.2
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 2.044
 Requires:	python3-modules >= 1:3.2
+Obsoletes:	python3-hatch_fancy_pypi_readme < 24.1.0-4
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -38,7 +40,7 @@ API documentation for Python %{module} module.
 Dokumentacja API modułu Pythona %{module}.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n hatch_fancy_pypi_readme-%{version}
 
 %build
 %py3_build_pyproject
@@ -62,5 +64,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS.md CHANGELOG.md README.md
 %attr(755,root,root) %{_bindir}/hatch-fancy-pypi-readme
-%{py3_sitescriptdir}/%{module}
-%{py3_sitescriptdir}/%{module}-%{version}.dist-info
+%{py3_sitescriptdir}/hatch_fancy_pypi_readme
+%{py3_sitescriptdir}/hatch_fancy_pypi_readme-%{version}.dist-info
