@@ -3,6 +3,7 @@
 
 %define		module	 hatch-fancy-pypi-readme
 Summary:	Fancy PyPI READMEs with Hatch
+Summary(pl.UTF-8):	Ozdobne README dla PyPI przy użyciu Hatcha
 Name:		python3-%{module}
 Version:	24.1.0
 Release:	4
@@ -33,7 +34,10 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Your ✨Fancy✨ Project Deserves a ✨Fancy✨ PyPI Readme!
+Your "Fancy" Project Deserves a "Fancy" PyPI Readme!
+
+%description -l pl.UTF-8
+"Ozdobny" projekt zasługuje na "ozdobne" readme na PyPI!
 
 %package apidocs
 Summary:	API documentation for Python %{module} module
